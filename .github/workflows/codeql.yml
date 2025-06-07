@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['c-pp', 'csharp']
+        language: ['csharp']
 
     steps:
     - name: Checkout repository
