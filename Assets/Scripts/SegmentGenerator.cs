@@ -8,12 +8,21 @@ public class SegmentGenerator : MonoBehaviour
     public GameObject[] segment;
     public int camOffset = -25;
 
-    [SerializeField] int zPos = 50;
-    [SerializeField] bool creatingSegment = false;
-    [SerializeField] int segmentNumber;
+    [SerializeField]
+    int zPos = 50;
+
+    [SerializeField]
+    bool creatingSegment = false;
+
+    [SerializeField]
+    int segmentNumber;
+
     // reference camera for calculating out of sight position
-    [SerializeField] private Camera cam;
-    [SerializeField] private float destroyDelay = 1;
+    [SerializeField]
+    private Camera cam;
+
+    [SerializeField]
+    private float destroyDelay = 1;
     private List<GameObject> activeSegments = new List<GameObject>();
 
     void Update()
@@ -25,7 +34,7 @@ public class SegmentGenerator : MonoBehaviour
         }
     }
 
-       void LateUpdate()
+    void LateUpdate()
     {
         foreach (GameObject segment in activeSegments)
         {
@@ -40,7 +49,11 @@ public class SegmentGenerator : MonoBehaviour
     IEnumerator SegmentGen()
     {
         segmentNumber = UnityEngine.Random.Range(0, segment.Length);
-        GameObject newSegment = Instantiate(segment[segmentNumber], new Vector3(0, 0, zPos), Quaternion.identity);
+        GameObject newSegment = Instantiate(
+            segment[segmentNumber],
+            new Vector3(0, 0, zPos),
+            Quaternion.identity
+        );
         activeSegments.Add(newSegment);
         zPos += 50;
         yield return new WaitForSeconds(10);
@@ -53,7 +66,7 @@ public class SegmentGenerator : MonoBehaviour
         bool isInViewPort = segment.transform.position.z >= cam.transform.position.z + camOffset;
         return isInViewPort;
     }
-    
+
     private IEnumerator DelayedDestroy(GameObject segment)
     {
         yield return new WaitForSeconds(destroyDelay);
