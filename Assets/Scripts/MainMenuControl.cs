@@ -33,9 +33,18 @@ public class MainMenuControl : MonoBehaviour
     [SerializeField]
     GameObject fadeIn;
 
+    [SerializeField]
+    GameObject highscoreDisplay;
+
     void Start()
     {
         StartCoroutine(FadeInTurnOff());
+        if (highscoreDisplay != null)
+        {
+            highscoreDisplay.GetComponent<TMPro.TMP_Text>().text =
+                "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
+        }
+
         if (hasClicked)
         {
             staticCam.SetActive(true);
@@ -43,6 +52,7 @@ public class MainMenuControl : MonoBehaviour
             menuControls.SetActive(true);
             bounceText.SetActive(false);
             bigButton.SetActive(false);
+            MasterInfo.coinCount = 0;
         }
     }
 
