@@ -12,5 +12,15 @@ public class CollectCoin : MonoBehaviour
         MasterInfo.coinCount += 1;
         // to make sound only play once + hide coin
         gameObject.SetActive(false);
+        CheckHighscore();
+    }
+
+    void CheckHighscore()
+    {
+        if (MasterInfo.coinCount > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            // highscore saved only on local computer!
+            PlayerPrefs.SetInt("HighScore", MasterInfo.coinCount);
+        }
     }
 }
