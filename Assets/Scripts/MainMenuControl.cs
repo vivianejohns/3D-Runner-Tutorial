@@ -39,8 +39,12 @@ public class MainMenuControl : MonoBehaviour
     void Start()
     {
         StartCoroutine(FadeInTurnOff());
-        highscoreDisplay.GetComponent<TMPro.TMP_Text>().text =
-            "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
+        if (highscoreDisplay != null)
+        {
+            highscoreDisplay.GetComponent<TMPro.TMP_Text>().text =
+                "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
+        }
+
         if (hasClicked)
         {
             staticCam.SetActive(true);
