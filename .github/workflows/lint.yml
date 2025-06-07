@@ -1,0 +1,24 @@
+name: Linting-Workflow
+
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check_format:
+    runs-on: ubuntu-latest
+    name: Check Format
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Dotnet restore
+        run: dotnet tool restore
+
+      - name: Run CSharpier Check
+        run: dotnet tool run dotnet-csharpier --check .
