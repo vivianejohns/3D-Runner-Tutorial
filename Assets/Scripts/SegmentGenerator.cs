@@ -10,13 +10,17 @@ public class SegmentGenerator : MonoBehaviour
 
     [SerializeField]
     int zPos = 50;
+
     [SerializeField]
     bool creatingSegment = false;
+
     [SerializeField]
     int segmentNumber;
+
     // reference camera for calculating out of sight position
     [SerializeField]
     private Camera cam;
+    
     [SerializeField]
     private float destroyDelay = 1;
     private List<GameObject> activeSegments = new List<GameObject>();
