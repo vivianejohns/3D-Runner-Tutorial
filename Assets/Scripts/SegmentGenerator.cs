@@ -52,7 +52,8 @@ public class SegmentGenerator : MonoBehaviour
         GameObject newSegment = Instantiate(
             segment[segmentNumber],
             new Vector3(0, 0, zPos),
-            Quaternion.identity);
+            Quaternion.identity
+        );
         activeSegments.Add(newSegment);
         zPos += 50;
         yield return new WaitForSeconds(10);
