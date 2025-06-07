@@ -20,7 +20,7 @@ public class SegmentGenerator : MonoBehaviour
     // reference camera for calculating out of sight position
     [SerializeField]
     private Camera cam;
-    
+
     [SerializeField]
     private float destroyDelay = 1;
     private List<GameObject> activeSegments = new List<GameObject>();

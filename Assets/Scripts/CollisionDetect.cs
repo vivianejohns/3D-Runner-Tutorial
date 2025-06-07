@@ -7,12 +7,16 @@ public class CollisionDetect : MonoBehaviour
 
     [SerializeField]
     GameObject player;
+
     [SerializeField]
     GameObject playerAnimation;
+
     [SerializeField]
     AudioSource collisionFX;
+
     [SerializeField]
     GameObject cam;
+    
     [SerializeField]
     GameObject fadeOutScreen;
 

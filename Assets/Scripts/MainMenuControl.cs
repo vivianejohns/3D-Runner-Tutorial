@@ -29,7 +29,7 @@ public class MainMenuControl : MonoBehaviour
 
     [SerializeField]
     GameObject staticCam;
-    
+
     [SerializeField]
     GameObject fadeIn;
 

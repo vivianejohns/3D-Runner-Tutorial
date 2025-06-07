@@ -9,7 +9,7 @@ public class CollectCoin : MonoBehaviour
     {
         coinFx.Play();
 
-        // 'MasterInfo' referenziert das andere Skript 
+        // 'MasterInfo' references other script
         MasterInfo.coinCount += 1;
         // to make sound only play once + hide coin
         gameObject.SetActive(false);
