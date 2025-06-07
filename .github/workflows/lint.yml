@@ -1,6 +1,6 @@
 name: Linting-Workflow
 
-on: 
+on:
   push:
     branches: [ "main" ]
   pull_request:
@@ -17,8 +17,11 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Dotnet restore
-        run: dotnet tool restore
-
+      - name: Create Tool Manifest
+        run: dotnet new tool-manifest
+        
+      - name: Install CSharpier
+        run: dotnet tool install --local dotnet-csharpier
+        
       - name: Run CSharpier Check
         run: dotnet tool run dotnet-csharpier --check .
