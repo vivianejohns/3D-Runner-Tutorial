@@ -50,7 +50,9 @@ public class SegmentGenerator : MonoBehaviour
     {
         segmentNumber = UnityEngine.Random.Range(0, segment.Length);
         GameObject newSegment = Instantiate(
-            segment[segmentNumber], new Vector3(0, 0, zPos), Quaternion.identity);
+            segment[segmentNumber],
+            new Vector3(0, 0, zPos),
+            Quaternion.identity);
         activeSegments.Add(newSegment);
         zPos += 50;
         yield return new WaitForSeconds(10);
