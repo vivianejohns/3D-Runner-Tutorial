@@ -45,7 +45,7 @@ public class MainMenuControl : MonoBehaviour
             bigButton.SetActive(false);
         }
     }
-    
+
     public void MenuBeginButton()
     {
         StartCoroutine(AnimCam());

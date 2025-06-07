@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetect : MonoBehaviour
 {
-
     [SerializeField]
     GameObject player;
 
@@ -16,7 +15,7 @@ public class CollisionDetect : MonoBehaviour
 
     [SerializeField]
     GameObject cam;
-    
+
     [SerializeField]
     GameObject fadeOutScreen;
 

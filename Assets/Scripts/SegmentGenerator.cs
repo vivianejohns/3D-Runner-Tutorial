@@ -34,7 +34,7 @@ public class SegmentGenerator : MonoBehaviour
         }
     }
 
-       void LateUpdate()
+    void LateUpdate()
     {
         foreach (GameObject segment in activeSegments)
         {
