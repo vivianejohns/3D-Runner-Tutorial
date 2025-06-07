@@ -7,6 +7,9 @@ public class CollectCoin : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         coinFx.Play();
+
+        // 'MasterInfo' referenziert das andere Skript 
+        MasterInfo.coinCount += 1;
         // to make sound only play once + hide coin
         gameObject.SetActive(false);
     }

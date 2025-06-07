@@ -6,8 +6,7 @@ using UnityEngine;
 public class SegmentGenerator : MonoBehaviour
 {
     public GameObject[] segment;
-    public int camOffset = -25
-    ;
+    public int camOffset = -25;
 
     [SerializeField] int zPos = 50;
     [SerializeField] bool creatingSegment = false;
@@ -37,7 +36,7 @@ public class SegmentGenerator : MonoBehaviour
         }
     }
 
-    // co-routine
+    // co-routine, needed with timing
     IEnumerator SegmentGen()
     {
         segmentNumber = UnityEngine.Random.Range(0, segment.Length);
@@ -52,8 +51,6 @@ public class SegmentGenerator : MonoBehaviour
     {
         // Prüfen ob das Segment innerhalb des Viewports ist
         bool isInViewPort = segment.transform.position.z >= cam.transform.position.z + camOffset;
-
-        Debug.Log(isInViewPort);
         return isInViewPort;
     }
     
