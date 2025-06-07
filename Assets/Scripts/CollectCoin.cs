@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CollectCoin : MonoBehaviour
 {
-    [SerializeField] AudioSource coinFx;
+    [SerializeField]
+    AudioSource coinFx;
 
     void OnTriggerEnter(Collider other)
     {

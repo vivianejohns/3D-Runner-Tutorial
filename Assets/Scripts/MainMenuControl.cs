@@ -4,16 +4,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControl : MonoBehaviour
 {
-    [SerializeField] GameObject fadeOut;
-    [SerializeField] GameObject bounceText;
-    [SerializeField] GameObject bigButton;
-    [SerializeField] GameObject animCam;
-    [SerializeField] GameObject mainCam;
-    [SerializeField] GameObject menuControls;
-    [SerializeField] AudioSource buttonSelect;
+    [SerializeField]
+    GameObject fadeOut;
+    [SerializeField]
+    GameObject bounceText;
+    [SerializeField]
+    GameObject bigButton;
+    [SerializeField]
+    GameObject animCam;
+    [SerializeField]
+    GameObject mainCam;
+    [SerializeField]
+    GameObject menuControls;
+    [SerializeField]
+    AudioSource buttonSelect;
     public static bool hasClicked;
-    [SerializeField] GameObject staticCam;
-    [SerializeField] GameObject fadeIn;
+    [SerializeField]
+    GameObject staticCam;
+    [SerializeField]
+    GameObject fadeIn;
 
     void Start()
     {

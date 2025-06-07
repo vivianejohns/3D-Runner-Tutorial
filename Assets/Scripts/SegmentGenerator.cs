@@ -8,12 +8,17 @@ public class SegmentGenerator : MonoBehaviour
     public GameObject[] segment;
     public int camOffset = -25;
 
-    [SerializeField] int zPos = 50;
-    [SerializeField] bool creatingSegment = false;
-    [SerializeField] int segmentNumber;
+    [SerializeField]
+    int zPos = 50;
+    [SerializeField]
+    bool creatingSegment = false;
+    [SerializeField]
+    int segmentNumber;
     // reference camera for calculating out of sight position
-    [SerializeField] private Camera cam;
-    [SerializeField] private float destroyDelay = 1;
+    [SerializeField]
+    private Camera cam;
+    [SerializeField]
+    private float destroyDelay = 1;
     private List<GameObject> activeSegments = new List<GameObject>();
 
     void Update()
