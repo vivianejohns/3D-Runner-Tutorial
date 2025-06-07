@@ -66,7 +66,7 @@ public class SegmentGenerator : MonoBehaviour
         bool isInViewPort = segment.transform.position.z >= cam.transform.position.z + camOffset;
         return isInViewPort;
     }
-    
+
     private IEnumerator DelayedDestroy(GameObject segment)
     {
         yield return new WaitForSeconds(destroyDelay);
