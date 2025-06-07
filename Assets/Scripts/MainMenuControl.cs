@@ -4,22 +4,43 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControl : MonoBehaviour
 {
-    [SerializeField] GameObject fadeOut;
-    [SerializeField] GameObject bounceText;
-    [SerializeField] GameObject bigButton;
-    [SerializeField] GameObject animCam;
-    [SerializeField] GameObject mainCam;
-    [SerializeField] GameObject menuControls;
-    [SerializeField] AudioSource buttonSelect;
+    [SerializeField]
+    GameObject fadeOut;
+
+    [SerializeField]
+    GameObject bounceText;
+
+    [SerializeField]
+    GameObject bigButton;
+
+    [SerializeField]
+    GameObject animCam;
+
+    [SerializeField]
+    GameObject mainCam;
+
+    [SerializeField]
+    GameObject menuControls;
+
+    [SerializeField]
+    AudioSource buttonSelect;
+
     public static bool hasClicked;
-    [SerializeField] GameObject staticCam;
-    [SerializeField] GameObject fadeIn;
-    [SerializeField] GameObject highscoreDisplay;
+
+    [SerializeField]
+    GameObject staticCam;
+
+    [SerializeField]
+    GameObject fadeIn;
+
+    [SerializeField]
+    GameObject highscoreDisplay;
 
     void Start()
     {
         StartCoroutine(FadeInTurnOff());
-        highscoreDisplay.GetComponent<TMPro.TMP_Text>().text = "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
+        highscoreDisplay.GetComponent<TMPro.TMP_Text>().text =
+            "HIGHSCORE: " + PlayerPrefs.GetInt("HighScore", 0);
         if (hasClicked)
         {
             staticCam.SetActive(true);
@@ -30,7 +51,7 @@ public class MainMenuControl : MonoBehaviour
             MasterInfo.coinCount = 0;
         }
     }
-    
+
     public void MenuBeginButton()
     {
         StartCoroutine(AnimCam());

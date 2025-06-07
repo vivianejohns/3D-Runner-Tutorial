@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CollectableRotate : MonoBehaviour
 {
-    [SerializeField] int rotateSpeed = 3;
+    [SerializeField]
+    int rotateSpeed = 3;
 
     void Update()
     {
